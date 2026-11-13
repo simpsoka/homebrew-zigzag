@@ -1,6 +1,6 @@
 cask "zigzag" do
-  version "0.1.2"
-  sha256 "a28ab0d96ac6500f905009b1126041f3c572569fac7d8cb5f0661c48d31d2aa2"
+  version "0.1.3"
+  sha256 "2ea2cfa9847ab882333f72dd4f04ffeb5d75baa111ab9b73694d6575c7a69556"
 
   url "https://github.com/simpsoka/zigzag/releases/download/v#{version}/ZigZag-#{version}.dmg"
   name "ZigZag"
@@ -12,6 +12,9 @@ cask "zigzag" do
     strategy :github_latest
   end
 
+  # ZigZag updates itself (ZigZag > Check for Updates): brew leaves a
+  # newer copy alone unless asked to upgrade it (--greedy).
+  auto_updates true
   depends_on :macos
 
   app "ZigZag.app"
